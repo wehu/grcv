@@ -16,7 +16,7 @@ target_link_libraries(grcv
 
 install(TARGETS grcv
   EXPORT grcv
-  LIBRARY DESTINATION ${GRCV_BUILD_DIRECTORY}/lib
+  LIBRARY DESTINATION lib
 )
 
 install(FILES
@@ -29,5 +29,5 @@ install(FILES
   grcv_randgen.h
   grcv_trait.h
   grcv_range.h
-  DESTINATION ${GRCV_BUILD_DIRECTORY}/include)
+  DESTINATION include)
 

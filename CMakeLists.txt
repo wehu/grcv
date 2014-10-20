@@ -4,8 +4,6 @@ project(grcv)
 
 get_filename_component(GRCV_DIRECTORY ${CMAKE_CURRENT_LIST_FILE} PATH)
 
-set(GRCV_BUILD_DIRECTORY ${GRCV_DIRECTORY}/build)
-
 link_directories($ENV{BUDDY_HOME}/lib)
 
 add_subdirectory(src)
