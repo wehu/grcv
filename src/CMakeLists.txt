@@ -3,7 +3,8 @@ add_library(grcv SHARED
   grcv_context.cpp
   grcv_logger.cpp
   grcv_randgen.cpp
-  grcv_randv.cpp)
+  grcv_randv.cpp
+  grcv_range.cpp)
 
 include_directories($ENV{BOOST_HOME}/include
                     $ENV{BUDDY_HOME}/include)
@@ -27,5 +28,6 @@ install(FILES
   grcv_context.h
   grcv_randgen.h
   grcv_trait.h
+  grcv_range.h
   DESTINATION ${GRCV_BUILD_DIRECTORY}/include)
 

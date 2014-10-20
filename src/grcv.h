@@ -54,20 +54,9 @@ int main() {
 #include "grcv_randv.h"
 #include "grcv_const.h"
 #include "grcv_randgen.h"
+#include "grcv_range.h"
 
 #define GRCV_SIGNED true
 #define GRCV_UNSIGNED false
-
-namespace grcv
-{
-
-    static boost::proto::literal<int> __ = -1;
-
-    #define GRCV_RANGE_LOC(z, n, unused) \
-    static boost::proto::literal<int> _##n = n;
-
-    BOOST_PP_REPEAT(256, GRCV_RANGE_LOC, ~)
-
-}
 
 
