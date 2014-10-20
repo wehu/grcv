@@ -47,9 +47,6 @@ int main() {
 
 #pragma once
 
-#include <boost/proto/proto.hpp>
-#include <boost/preprocessor/repetition.hpp>
-
 #include "grcv_logger.h"
 #include "grcv_randv.h"
 #include "grcv_const.h"
