@@ -25,6 +25,17 @@ namespace grcv
     // logger functions
     namespace logger
     {
+
+        class grcv_exception : public std::exception
+        {
+        public:
+            grcv_exception(const std::string & msg) throw() : _msg(msg) {}
+            virtual ~grcv_exception() throw() {}
+            virtual const char * what() const throw() { return _msg.c_str(); }
+        private:
+            std::string _msg;
+        };
+
         enum level
         {
             _info = 0,
