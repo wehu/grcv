@@ -18,7 +18,6 @@
 #pragma once
 
 #include <boost/preprocessor/repetition.hpp>
-#include <boost/static_assert.hpp>
 #include <boost/type_traits.hpp>
 #include <bitset>
 

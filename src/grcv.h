@@ -47,7 +47,6 @@ int main() {
 
 #pragma once
 
-#include "grcv_logger.h"
 #include "grcv_randv.h"
 #include "grcv_const.h"
 #include "grcv_randgen.h"
