@@ -8,6 +8,8 @@ and use buddy as solver.
 1. boost
 2. buddy
 
+setenv BOOST_HOME AND BUDDY_HOME for them
+
 #### Example:
 
 	#include "grcv.h"
