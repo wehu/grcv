@@ -9,7 +9,7 @@ add_library(grcv SHARED
 include_directories($ENV{BOOST_HOME}/include
                     $ENV{BUDDY_HOME}/include)
 
-link_directories($ENV{BUDDY_HOME}/lib $ENV{BOOST_HOME}/lib)
+link_directories($ENV{BUDDY_HOME}/lib)
 
 target_link_libraries(grcv
   bdd)
