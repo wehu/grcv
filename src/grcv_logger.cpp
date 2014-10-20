@@ -15,7 +15,9 @@
 *
 */
 
-#include <assert.h>
+#include <iostream>
+#include <string>
+#include <exception>
 
 #include "grcv_logger.h"
 
@@ -25,6 +27,17 @@ namespace grcv
     // logger functions
     namespace logger
     {
+
+        class grcv_exception : public std::exception
+        {
+        public:
+            grcv_exception(const std::string & msg) throw() : _msg(msg) {}
+            virtual ~grcv_exception() throw() {}
+            virtual const char * what() const throw() { return _msg.c_str(); }
+        private:
+            std::string _msg;
+        };
+
         void print_(level l, const std::string &msg)
         {
             switch(l)
@@ -35,10 +48,10 @@ namespace grcv
                 case _error : std::cerr << "[GRCV E]: "; break;
                 case _fatal : std::cerr << "[GRCV F]: "; break;
             }
-            if (l == _error || l == _fatal)
+            if (l == _error)
                 std::cerr << msg << std::endl;
+            else if (l == _fatal) throw grcv_exception(msg);
             else std::cout << msg << std::endl;
-            if (l == _fatal) assert(0);
         }
         void info(const std::string & msg)
         {
