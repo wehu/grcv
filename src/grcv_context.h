@@ -527,9 +527,13 @@ namespace grcv
             at_or_range (const at_or_range &a, const at_or_range &b)
             {
                 for(int i=0; i < a.v.size(); i++)
+                {
                     v.push_back(a.v[i]);
+                }
                 for(int i=0; i < b.v.size(); i++)
+                {
                     v.push_back(b.v[i]);
+                }
             }
             result_type v;
         };
@@ -543,7 +547,7 @@ namespace grcv
                     )
                 >,
                 boost::proto::when<
-                    boost::proto::comma<boost::proto::terminal<int>
+                    boost::proto::comma<boost::proto::_
                                        ,boost::proto::terminal<int> >
                    ,at_or_range(
                         at_or_range_grammar(boost::proto::_left)
@@ -555,6 +559,7 @@ namespace grcv
         template <typename L, typename R>
         result_type operator () (boost::proto::tag::subscript op, const L & l, const R & r) const
         {
+            BOOST_MPL_ASSERT((boost::proto::matches<R, at_or_range_grammar>));
             const result_type & l_ = boost::proto::eval(l, *this);
             at_or_range_grammar grammar;
             at_or_range r_ = grammar(r);

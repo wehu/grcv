@@ -19,6 +19,7 @@ public:
       );
       constraint(
          b() < 0 && b()[_2, __, _5] == conbits<4, GRCV_UNSIGNED>(0)
+         && a()[_2, __, _5] == b()[_3, __, _6]
       );
    }
 };
