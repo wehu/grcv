@@ -5,8 +5,8 @@ The library is based on boost::proto to create EDSL for constaint expression
 and use buddy as solver.
 
 #### Requirements:
-1. boost
-2. buddy
+1. [boost](http://www.boost.org/)
+2. [buddy](http://buddy.sourceforge.net)
 
 setenv BOOST_HOME AND BUDDY_HOME for them
 
