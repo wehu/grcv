@@ -547,7 +547,7 @@ namespace grcv
                     )
                 >,
                 boost::proto::when<
-                    boost::proto::comma<boost::proto::_
+                    boost::proto::comma<at_or_range_grammar
                                        ,boost::proto::terminal<int> >
                    ,at_or_range(
                         at_or_range_grammar(boost::proto::_left)
